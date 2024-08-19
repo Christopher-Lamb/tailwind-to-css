@@ -95,5 +95,5 @@ module.exports = {
   getCSS,
 };
 
-// const css = getCSS({ new: "top-[]" });
-// console.log(css);
+const css = getCSS({ new: "bg-gradient-to-tr from-blue-100 from-10% via-blue-100 via-20% to-blue-100 to-30% " });
+console.log(css);

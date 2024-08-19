@@ -1,5 +1,5 @@
-const { getCSS } = require("./contructor");
-const { addClassesToElements } = require("./addClassesToElements");
+const { getCSS } = require("./utils/constructor");
+const { addClassesToElements } = require("./utils/addClassesToElements");
 let lastTime = 0;
 let counter = 0;
 

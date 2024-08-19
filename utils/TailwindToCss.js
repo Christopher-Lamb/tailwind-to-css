@@ -1,16 +1,17 @@
-const { getDimension, getMinMax } = require("./sizing");
-const { getText, getFont, getBreak, getWhiteSpace, getLeading, getTracking, getLine } = require("./typography");
-const { getCursor, getResize, getScroll, getAccent } = require("./interactivity");
-const { getFill, getStroke } = require("./svg");
-const { getObjectCSS, getOverFlow, getTRBL } = require("./layout");
-const { getBackground } = require("./background");
-const { getBorder, getOutline, getRounded } = require("./borders");
-const { getTransition, getDuration, getEase, getDelay } = require("./transition");
-const { getScale, getRotate, getTranslate, getOrigin } = require("./transforms");
-const { getMisc, getVar } = require("./misc");
-const { getBoxSpacing } = require("./spacing");
-const { getShadow, getBlur, getBrightness, getContrast, getGrayscale, getAnimate } = require("./effects");
-const { getFlex, getBasis, getGrid, getCol, getRow, getGap, getJustify, getContent, getItems, getSelf, getPlace } = require("./flex-grid");
+const { getDimension, getMinMax } = require("../css-functions/sizing");
+const { getText, getFont, getBreak, getWhiteSpace, getLeading, getTracking, getLine } = require("../css-functions/typography");
+const { getCursor, getResize, getScroll, getAccent } = require("../css-functions/interactivity");
+const { getFill, getStroke } = require("../css-functions/svg");
+const { getObjectCSS, getOverFlow, getTRBL } = require("../css-functions/layout");
+const { getBackground } = require("../css-functions/background");
+const { getBorder, getOutline, getRounded } = require("../css-functions/borders");
+const { getTransition, getDuration, getEase, getDelay } = require("../css-functions/transition");
+const { getScale, getRotate, getTranslate, getOrigin } = require("../css-functions/transforms");
+const { getMisc, getVar } = require("../css-functions/misc");
+const { getBoxSpacing } = require("../css-functions/spacing");
+const { getShadow, getBlur, getBrightness, getContrast, getGrayscale, getAnimate } = require("../css-functions/effects");
+const { getFlex, getBasis, getGrid, getCol, getRow, getGap, getJustify, getContent, getItems, getSelf, getPlace } = require("../css-functions/flex-grid");
+const { getFrom, getVia, getTo } = require("../css-functions/gradient");
 
 const breakpoints = ["sm", "md", "lg", "xl", "2xl"];
 const states = ["hover", "active", "focus", "after", "before"];
@@ -242,6 +243,15 @@ const TailwindtoCSS = (tailwindStr) => {
           break;
         case "place":
           classObj.css = getPlace(arr);
+          break;
+        case "from":
+          classObj.css = getFrom(arr);
+          break;
+        case "via":
+          classObj.css = getVia(arr);
+          break;
+        case "to":
+          classObj.css = getTo(arr);
           break;
         case "animate":
           const { id, css, string } = getAnimate(arr);

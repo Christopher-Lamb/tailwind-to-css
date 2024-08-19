@@ -1,5 +1,6 @@
 const rgbColorMap = {
   black: "0 0 0",
+  inherit: "255 255 255",
   white: "255 255 255",
   "slate-50": "248 250 252",
   "slate-100": "241 245 249",

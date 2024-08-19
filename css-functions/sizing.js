@@ -72,8 +72,18 @@ const getMinMax = (arr) => {
   }
 };
 
+const getSizeCSS = (arr) => {
+  arr.splice(0, 1);
+
+  const size = getSize(arr.join("-"));
+  if (size) {
+    return `	width: ${size};height: ${size};`;
+  }
+};
+
 module.exports = {
   getSize,
+  getSizeCSS,
   getDimension,
   getMinMax,
 };
